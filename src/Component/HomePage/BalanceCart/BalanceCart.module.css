@@ -1,0 +1,65 @@
+.BalanceCart {
+  background: linear-gradient(180deg, #f2eef7 0%, #ffffff 100%);
+  border: 1px dashed #e6edff;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.12);
+  height: 170px;
+  width: 350px;
+  border-radius: 8px;
+  margin-top: 40px;
+  padding: 24px;
+  margin-right: 24px;
+  position: relative;
+}
+
+.Title {
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+  color: #495057;
+}
+
+.AvailBaleText {
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 15px;
+  color: #bcc2c9;
+  margin-bottom: 5px;
+}
+
+.AvailBaleTag {
+  height: 55px;
+  padding-top: 7px;
+}
+
+.Available {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  color: #54509d;
+  border: 1px solid #54509d;
+  box-sizing: border-box;
+  border-radius: 4px;
+  height: 26px;
+  width: 69px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Amount {
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+  color: #495057;
+}
+
+.QRCode {
+  position: absolute;
+  right: 24px;
+  bottom: 24px;
+}

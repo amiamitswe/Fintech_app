@@ -1,0 +1,81 @@
+.Date {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+  margin: 25px 0;
+}
+
+.List {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  border-bottom: 1px solid #e5edf9 !important;
+}
+
+.List:first-child {
+  border-top: 1px solid #e5edf9 !important;
+}
+
+.Item {
+  display: flex;
+  align-items: center;
+}
+
+.Image {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+
+.ItemName {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 19px;
+  color: #495057;
+}
+
+.ItemEmail {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+  color: #adb5bd;
+  margin-top: 6px;
+}
+.ItemAmount {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 21px;
+}
+
+.Status {
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 14px;
+  background: #ffffff;
+  text-align: center;
+  padding: 6px 14px;
+  width: fit-content;
+  border-radius: 4px;
+  margin-top: 6px;
+}
+
+.Approved {
+  border: 1px solid #114b39;
+  color: #114b39;
+}
+
+.Pending {
+  border: 1px solid #fc0505;
+  color: #fc0505;
+}
+
+.Amount {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-left: auto;
+}

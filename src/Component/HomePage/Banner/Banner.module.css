@@ -1,0 +1,18 @@
+.Banner {
+  background: url(../../../assets/top_bg.png) no-repeat;
+  background-size: cover;
+  height: 280px;
+  padding-top: 64px;
+}
+
+.BannerTitle {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 28px;
+}
+
+.BannerSubTitle {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21px;
+}
