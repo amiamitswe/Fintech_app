@@ -1,9 +1,9 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
 import Header from './Header/Header'
-import Home from '../container/Home/Home'
 import PageNotFound from '../container/PageNotFound/PageNotFound'
 import Footer from './Footer/Footer'
+import Home from '../container/HomePage/Home'
 
 
 

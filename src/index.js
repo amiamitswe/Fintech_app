@@ -5,11 +5,14 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
+import { StateProvider } from './context/store';
 
 ReactDOM.render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>,
+  <StateProvider>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </StateProvider>,
   document.getElementById('root')
 );
 

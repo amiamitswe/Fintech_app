@@ -61,16 +61,23 @@
   width: fit-content;
   border-radius: 4px;
   margin-top: 6px;
+  color: #131313;
+  border: 1px solid #131313;
 }
 
 .Approved {
-  border: 1px solid #114b39;
-  color: #114b39;
+  border-color: #01d492;
+  color: #01d492;
+}
+
+.Reject {
+  border-color: #fc0505;
+  color: #fc0505;
 }
 
 .Pending {
-  border: 1px solid #fc0505;
-  color: #fc0505;
+  border-color: rgb(255, 166, 0);
+  color: rgb(255, 166, 0);
 }
 
 .Amount {

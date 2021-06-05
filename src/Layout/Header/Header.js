@@ -1,6 +1,6 @@
 import { faBell } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Col, Container, Row } from 'react-bootstrap';
+import { Col, Container, Navbar, Row } from 'react-bootstrap';
 import { NavLink, Link } from 'react-router-dom';
 import MenuIcon from '../../Component/Ui/MenuIcon/MenuIcon';
 import User from '../../Component/Ui/User/User';
@@ -10,7 +10,7 @@ import classes from './Header.module.css';
 const Header = () => {
   return (
 
-    <div className={classes.Header}>
+    <Navbar fixed="top" bsPrefix={classes.Header}>
       <Container>
         <Row>
           <Col>
@@ -31,7 +31,7 @@ const Header = () => {
           </Col>
         </Row>
       </Container>
-    </div>
+    </Navbar>
 
   )
 }
