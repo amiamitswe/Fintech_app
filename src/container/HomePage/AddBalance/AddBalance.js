@@ -1,5 +1,4 @@
 import classes from './AddBalance.module.css'
-import React from 'react'
 
 const AddBalance = ({ onClick }) => {
   return (

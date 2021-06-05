@@ -1,38 +1,35 @@
 import { faBell } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Col, Container, Navbar, Row } from 'react-bootstrap';
+import { Container, Nav, Navbar } from 'react-bootstrap';
 import { NavLink, Link } from 'react-router-dom';
 import MenuIcon from '../../Component/Ui/MenuIcon/MenuIcon';
 import User from '../../Component/Ui/User/User';
 import classes from './Header.module.css';
 
-
 const Header = () => {
   return (
-
-    <Navbar fixed="top" bsPrefix={classes.Header}>
+    <Navbar fixed="top" collapseOnSelect expand="lg" className={classes.Header} variant="dark">
       <Container>
-        <Row>
-          <Col>
-            <div className={classes.HeaderWrapper}>
-              <div className={classes.HeaderLeft}>
-                <MenuIcon />
-
-                <NavLink exact className={classes.MenuLink + ' ml-4'} activeClassName={classes.ActiveMenuLink} to='/'>Wallet</NavLink>
-                <NavLink className={classes.MenuLink + ' ml-4'} activeClassName={classes.ActiveMenuLink} to='/a'>History</NavLink>
-                <NavLink className={classes.MenuLink + ' ml-4'} activeClassName={classes.ActiveMenuLink} to='/v'>Recipients</NavLink>
-                <NavLink className={classes.MenuLink + ' ml-4'} activeClassName={classes.ActiveMenuLink} to='/b'>QR Codes</NavLink>
-              </div>
-              <div className='d-flex align-items-center justify-content-center'>
-                <Link className='mr-3' to='/n'> <FontAwesomeIcon className='text-white' icon={faBell} />  </Link>
-                <User />
-              </div>
+        <MenuIcon />
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav" >
+          <Nav className="mr-auto">
+            <div className={classes.HeaderLeft + ' mt-2 mt-lg-0'}>
+              <NavLink exact className={classes.MenuLink + ' ml-0 ml-lg-4'} activeClassName={classes.ActiveMenuLink} to='/'>Wallet</NavLink>
+              <NavLink className={classes.MenuLink + ' ml-0 ml-lg-4'} activeClassName={classes.ActiveMenuLink} to='/history'>History</NavLink>
+              <NavLink className={classes.MenuLink + ' ml-0 ml-lg-4'} activeClassName={classes.ActiveMenuLink} to='/recipients'>Recipients</NavLink>
+              <NavLink className={classes.MenuLink + ' ml-0 ml-lg-4'} activeClassName={classes.ActiveMenuLink} to='/QRCodes'>QR Codes</NavLink>
             </div>
-          </Col>
-        </Row>
+          </Nav>
+          <Nav>
+            <div className={classes.HeaderRight}>
+              <Link className='mx-3' to='/'> <FontAwesomeIcon className='text-white' icon={faBell} />  </Link>
+              <User />
+            </div>
+          </Nav>
+        </Navbar.Collapse>
       </Container>
     </Navbar>
-
   )
 }
 

@@ -1,10 +1,11 @@
 const Select = (props) => {
+    const { label, name, value, changed, options } = props
     return (
         <div className='mb-2'>
-            <label>{props.label ? props.label : 'Option'}</label>
-            <select name={props.name} value={props.value} onChange={props.changed} className="form-control">
-                <option hidden>Select your {props.label ? props.label : 'Option'}</option>
-                {props.options.map((option) => (
+            <label>{label ? label : 'Option'}</label>
+            <select name={name} value={value} onChange={changed} className="form-control">
+                <option hidden>Select your {label ? label : 'Option'}</option>
+                {options.map((option) => (
                     <option key={option._id} value={option.title}>{option.title}</option>
                 ))}
             </select>

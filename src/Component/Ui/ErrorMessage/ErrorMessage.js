@@ -1,8 +1,6 @@
-
 import { Alert } from 'react-bootstrap'
 
 const ErrorMessage = ({ message }) => {
-
   const style = {
     position: 'fixed',
     zIndex: '9999',

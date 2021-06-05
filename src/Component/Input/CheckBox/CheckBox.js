@@ -1,14 +1,14 @@
-import React from 'react'
 import classes from './CheckBox.module.css'
 
 const CheckBox = (props) => {
+  const { label, name, labelfor, options, checked, changed } = props
   return (
     <>
-      {props.label ? <label className="form-check-label" htmlFor={props.labelfor}>{props.label}</label> : ""}
-      {props.options.map(el =>
+      {label ? <label className="form-check-label" htmlFor={labelfor}>{label}</label> : ""}
+      {options.map(el =>
         <div key={el.value}>
           <label className={classes.container} >{el.displayValue}
-            <input checked={props.checked} name={props.name} type="checkbox" onChange={(e) => props.changed(e, el.value)} />
+            <input checked={checked} name={name} type="checkbox" onChange={(e) => changed(e, el.value)} />
             <span className={classes.checkMark}></span>
           </label>
         </div>

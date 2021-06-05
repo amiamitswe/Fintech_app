@@ -1,4 +1,3 @@
-import React from 'react'
 import { Image, ListGroup } from 'react-bootstrap'
 import User from '../../../assets/user.png'
 import classes from './Activity.module.css'
@@ -28,10 +27,8 @@ const Activity = ({ data }) => {
               </ListGroup.Item>
             </ListGroup>
           ))}
-
         </div>
       ))}
-
     </div>
   )
 }

@@ -1,4 +1,3 @@
-import React from 'react'
 import { Image } from 'react-bootstrap'
 import QR from '../../../assets/QR.png'
 import classes from './BalanceCart.module.css'

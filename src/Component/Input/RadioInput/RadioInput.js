@@ -1,4 +1,4 @@
-import React from 'react'
+
 import classes from './RadioInput.module.css'
 
 const RadioInput = ({ value, name, label, changed }) => {

@@ -8,16 +8,15 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.24);
 }
 
-.HeaderWrapper {
-  width: 100%;
-  height: 70px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
 .HeaderLeft {
   display: flex;
   align-items: center;
+}
+
+.HeaderRight {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .MenuLink {
@@ -37,4 +36,24 @@
   color: #fff;
   text-decoration: none;
   background: rgba(255, 255, 255, 0.16);
+}
+
+@media (max-width: 991px) {
+  .Header {
+    height: auto;
+    padding: 1rem !important;
+  }
+  .HeaderLeft {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .HeaderRight {
+    margin-top: 30px;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+  }
+  .MenuLink {
+    margin-top: 5px;
+  }
 }

@@ -6,7 +6,6 @@ const store = createContext()
 
 const { Provider } = store
 
-
 const StateProvider = ({ children }) => {
   const [balance, balanceDispatch] = useReducer(balanceReducer, initialBalance)
 
@@ -19,6 +18,5 @@ const StateProvider = ({ children }) => {
     </Provider>
   )
 }
-
 
 export { store, StateProvider }

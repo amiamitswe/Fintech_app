@@ -25,3 +25,10 @@
   text-decoration: none;
   color: #fff;
 }
+
+@media (max-width: 768px) {
+  .ActionCart {
+    width: 48%;
+    margin: 10px 0;
+  }
+}

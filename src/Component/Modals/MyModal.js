@@ -1,23 +1,24 @@
-import React from 'react'
-import { faSave, faTimes } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Button, Modal } from 'react-bootstrap'
 
-const MyModal = ({ children, show, handleClose, onSubmit }) => {
+const MyModal = (props) => {
+  const { children, show, handleClose, onSubmit, cancel, closeText, done, saveText } = props
   return (
     <Modal size="lg" centered show={show} onHide={handleClose}>
       <Modal.Header closeButton>
-        <Modal.Title>Modal heading <FontAwesomeIcon className='ml-2' icon={faSave} /></Modal.Title>
+        <Modal.Title>Modal heading
+          {done && <FontAwesomeIcon className='ml-2' icon={done} />}
+        </Modal.Title>
       </Modal.Header>
       <Modal.Body>{children}</Modal.Body>
       <Modal.Footer>
         <Button variant="secondary" onClick={handleClose}>
-          <FontAwesomeIcon className='mr-2' icon={faTimes} />
-          Close
+          {cancel && <FontAwesomeIcon className='mr-2' icon={cancel} />}
+          {closeText ? closeText : 'Close'}
         </Button>
         <Button variant="info" onClick={onSubmit}>
-          <FontAwesomeIcon className='mr-2' icon={faSave} />
-          Save Balance
+          {done && <FontAwesomeIcon className='mr-2' icon={done} />}
+          {saveText ? saveText : 'Save'}
         </Button>
       </Modal.Footer>
     </Modal>

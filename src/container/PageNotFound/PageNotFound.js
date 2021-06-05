@@ -1,9 +1,8 @@
-import React from 'react'
 import ErrorLoading from '../../assets/errorPage.gif'
 
 const PageNotFound = ({ text }) => {
   return (
-    <div className='text-center pt-3 pb-5 bg-white'>
+    <div className='text-center pt-3 pb-5'>
       <h2 className='text-danger font-weight-bold'>Oh no...! <br />
         {text ? text : 'Page not found'}
       </h2>
@@ -11,6 +10,5 @@ const PageNotFound = ({ text }) => {
     </div>
   )
 }
-
 
 export default PageNotFound
