@@ -9,3 +9,10 @@
   line-height: 15px;
   color: #495057;
 }
+
+@media (max-width: 768px) {
+  .Footer {
+    flex-direction: column;
+    text-align: center;
+  }
+}

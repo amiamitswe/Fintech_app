@@ -1,6 +1,6 @@
 import { faFunnelDollar, faHandHoldingUsd, faHryvnia, faWallet } from '@fortawesome/free-solid-svg-icons'
 
-const activity = [
+const dummyActivity = [
   {
     _id: 1001, date: 'Today, 15 January', history: [
       { _id: 10001, balanceType: 'Dollar Balance (Primary)', email: 'Mrs Mohan . valobasha@email.com', amount: '1,750.00', status: 'Approved' },
@@ -18,7 +18,7 @@ const activity = [
   },
 ]
 
-const pending = [
+const dummyPending = [
   {
     _id: 2001, date: 'Today, 15 January', history: [
       { _id: 20001, balanceType: 'Dollar Balance (Primary)', email: 'Mrs Mohan . valobasha@email.com', amount: '3,450.00', status: 'Pending' },
@@ -28,21 +28,21 @@ const pending = [
   },
 ]
 
-const actionLink = [
+const defaultActionLink = [
   { id: 100, name: 'Pay', link: '/pay', icon: faHryvnia },
   { id: 102, name: 'Request', link: '/request', icon: faHandHoldingUsd },
   { id: 103, name: 'TopUp', link: '/topUp', icon: faWallet },
   { id: 104, name: 'Withdraw', link: '/', icon: faFunnelDollar }
 ]
 
-const balanceData = [
-  { _id: 10001, balanceType: 'Dollar Balance', availableBalance: 12, isPrimary: true },
-  { _id: 10002, balanceType: 'My Dollar', availableBalance: 15, },
+const defaultBalanceData = [
+  { _id: 10001, balanceType: 'Dollar Balance', availableBalance: 100, isPrimary: true },
+  { _id: 10002, balanceType: 'My Dollar', availableBalance: 150, },
 ]
 
-const selectOption = [
+const balanceTypeOptions = [
   { _id: 10000001, title: 'Dollar Balance' },
   { _id: 10000002, title: 'My Dollar' }
 ]
 
-export { activity, pending, actionLink, balanceData, selectOption }
+export { dummyActivity, dummyPending, defaultActionLink, defaultBalanceData, balanceTypeOptions }

@@ -1,14 +1,18 @@
 import React, { useCallback, useContext, useEffect, useState } from 'react'
+import { Col, Container, Row, Tabs, Tab } from 'react-bootstrap'
 import { store } from '../../../context/store'
 import { ACTIVITY_DATA, PENDING_DATA } from '../../../context/actionTypes/actionTypes'
-import { Col, Container, Row, Tabs, Tab } from 'react-bootstrap'
-import ActionCart from '../ActionCart/ActionCart'
-import Activity from '../Activity/Activity'
+import { defaultActionLink, dummyActivity, dummyPending } from '../../../Utility/library'
 import fetchData from '../../../Utility/fetchData'
-import { actionLink, activity, pending } from '../../../Utility/library'
+import ActionCart from '../../../Component/HomePage/ActionCart/ActionCart'
+import Activity from '../../../Component/HomePage/Activity/Activity'
 import classes from './HomeBody.module.css'
 
 const HomeBody = () => {
+  const pending = dummyPending
+  const activity = dummyActivity
+  const actionLink = defaultActionLink
+
   const { balance, balanceDispatch } = useContext(store)
   const [key, setKey] = useState('recent');
 
@@ -21,7 +25,7 @@ const HomeBody = () => {
     catch (error) {
       throw new Error()
     }
-  }, [balanceDispatch])
+  }, [balanceDispatch, pending])
 
   // fetch pending data info
   const fetchPending = useCallback(async () => {
@@ -32,7 +36,7 @@ const HomeBody = () => {
     catch (error) {
       throw new Error()
     }
-  }, [balanceDispatch])
+  }, [balanceDispatch, activity])
 
   // fetch data if empty using useEffect
   useEffect(() => {
@@ -47,15 +51,26 @@ const HomeBody = () => {
           <Col md={4}>
             <p className={classes.ActionTitle}>Action</p>
             <div className='d-flex flex-wrap justify-content-md-start justify-content-between'>
-              {actionLink.map(el => <ActionCart key={el.id} name={el.name} link={el.link} icon={el.icon} />)}
+              {actionLink.map(el => (
+                <ActionCart
+                  key={el.id}
+                  name={el.name}
+                  link={el.link}
+                  icon={el.icon}
+                />))}
             </div>
           </Col>
 
-          <Col md={8}>
+          <Col md={8} className='mt-md-0 mt-5'>
             <p className={classes.ActionTitle}>Recent activity</p>
             <div className={classes.Activity}>
               <button onClick={() => console.log('Clicked')} className={classes.ShowAll}>View all</button>
-              <Tabs className={classes.Tabs} activeKey={key} onSelect={(k) => setKey(k)} variant='pills'>
+              <Tabs
+                className={classes.Tabs}
+                activeKey={key}
+                onSelect={(k) => setKey(k)}
+                variant='pills'
+              >
                 <Tab eventKey="recent" title="Recent" tabClassName='ActionTab'>
                   <Activity data={balance.activityData} />
                 </Tab>

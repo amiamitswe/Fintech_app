@@ -1,20 +1,23 @@
 import React, { useCallback, useContext, useEffect, useState } from 'react'
+import { Col, Container, Row } from 'react-bootstrap'
+import { faSave, faTimes } from '@fortawesome/free-solid-svg-icons'
 import { store } from '../../../context/store'
 import { ADD_NEW_BALANCE, ALL_BALANCE, RESET_ERROR, SET_ERROR } from '../../../context/actionTypes/actionTypes'
-import { Col, Container, Row } from 'react-bootstrap'
-import BalanceCart from '../BalanceCart/BalanceCart'
-import AddBalance from '../AddBalance/AddBalance'
+import { defaultBalanceData, balanceTypeOptions } from '../../../Utility/library'
+import BalanceCart from '../../../Component/HomePage/BalanceCart/BalanceCart'
 import fetchData from '../../../Utility/fetchData'
+import AddBalance from '../../../Component/HomePage/AddBalance/AddBalance'
 import ErrorMessage from '../../../Component/Ui/ErrorMessage/ErrorMessage'
 import AddBalanceModal from '../../../Component/Modals/AddBalanceModal'
 import classes from './Banner.module.css'
-import { faSave, faTimes } from '@fortawesome/free-solid-svg-icons'
-import { balanceData, selectOption } from '../../../Utility/library'
 
 const Banner = () => {
-  const { balance, balanceDispatch } = useContext(store)
+  const balanceData = defaultBalanceData
+  const selectOption = balanceTypeOptions
+
   const [show, setShow] = useState(false);
   const [balanceInfo, setBalanceInfo] = useState({})
+  const { balance, balanceDispatch } = useContext(store)
 
   // close modal
   const closeModal = () => {
@@ -28,7 +31,7 @@ const Banner = () => {
   // fetch add balance data
   const fetchAllBalanceData = useCallback(async () => {
     fetchData(balanceDispatch, ALL_BALANCE, balanceData)
-  }, [balanceDispatch])
+  }, [balanceDispatch, balanceData])
 
   // save balance data if empty using useEffect
   useEffect(() => {
@@ -84,7 +87,12 @@ const Banner = () => {
             <p className={classes.BannerSubTitle + ' text-white'}>Dashboard</p>
             <div className='d-flex flex-md-row flex-column'>
               {balance.data?.map(item => (
-                <BalanceCart key={item._id} type={item.balanceType} amount={item.availableBalance} isPrimary={item.isPrimary} />
+                <BalanceCart
+                  key={item._id}
+                  type={item.balanceType}
+                  amount={item.availableBalance}
+                  isPrimary={item.isPrimary}
+                />
               ))}
               <AddBalance onClick={showModal} />
             </div>

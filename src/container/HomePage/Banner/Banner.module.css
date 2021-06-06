@@ -16,3 +16,11 @@
   font-weight: 400;
   line-height: 21px;
 }
+
+@media (max-width: 768px) {
+  .Banner {
+    padding-top: 40px;
+    background-size: 100% 250px;
+    height: auto;
+  }
+}

@@ -3,7 +3,6 @@ import { ALL_BALANCE, ADD_NEW_BALANCE, PENDING_DATA, ACTIVITY_DATA, SET_ERROR, R
 const balanceReducer = (state, { payload, type }) => {
   switch (type) {
     case ALL_BALANCE:
-      // console.log(payload);
       return {
         ...state,
         data: [...payload]
@@ -15,7 +14,6 @@ const balanceReducer = (state, { payload, type }) => {
       const index = updateBalanceData.findIndex(e => e.balanceType === payload.balanceType)
       updateBalanceData[index].availableBalance = updateBalanceData[index].availableBalance + Number(payload.availableBalance)
 
-      // updateBalanceData.push(payload)
       return {
         ...state,
         data: updateBalanceData

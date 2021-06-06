@@ -14,20 +14,18 @@ const AddBalanceModal = (props) => {
       done={saveIcon}
       saveText={saveText}
     >
-      <>
-        <Select
-          options={selectOption}
-          name='balanceType'
-          label='Balance Type'
-          changed={addBalanceHandler}
-        />
-        <Input
-          type='number' label='Your Balance'
-          placeholder='Your Total balance' name='availableBalance'
-          changed={addBalanceHandler}
-          value={availableBalance}
-        />
-      </>
+      <Select
+        options={selectOption}
+        name='balanceType'
+        label='Balance Type'
+        changed={addBalanceHandler}
+      />
+      <Input
+        type='number' label='Your Balance'
+        placeholder='Your Total balance' name='availableBalance'
+        changed={addBalanceHandler}
+        value={availableBalance}
+      />
     </MyModal>
   )
 }
